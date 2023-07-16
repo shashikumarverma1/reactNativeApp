@@ -1,7 +1,10 @@
-
+import {useContext} from "react"
 import { StyleSheet, Text, View , Pressable, Dimensions } from 'react-native';
 const width=Dimensions.get("window").width
+import { GlobalInfo } from '../contextProvider/userDetails';
 export const  Profile=()=> {
+  const { userDetails } = useContext(GlobalInfo);
+  console.log(userDetails)
   return (
     <View style={styles.container}>
 <Text>Profile</Text>

@@ -1,10 +1,18 @@
-
+import React , {useContext} from "react"
 import { StyleSheet, Text, View , Pressable, Dimensions } from 'react-native';
 const width=Dimensions.get("window").width
+import { CountInfo } from '../contextProvider/ProductCount';
 export const  Home=()=> {
+const {name , setname} = useContext(CountInfo)
   return (
     <View style={styles.container}>
 <Text>Home</Text>
+<Text>{name}</Text>
+<Pressable onPress={()=>setname("monu")}>
+  <Text>
+    change name
+  </Text>
+</Pressable>
     </View>
   );
 }
