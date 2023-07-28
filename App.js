@@ -3,20 +3,19 @@ import { StyleSheet, Text, View , Pressable } from 'react-native';
 import React , {useState} from 'react';
 import ContextProvider from './contextProvider/userDetails';
 import { BottomNavigation } from './navigations/Bottomnavigation';
-import ContextProvidercount from './contextProvider/ProductCount';
+import ContextProviderProductCart from './contextProvider/ProductCart'
+import ContextProviderAmount from './contextProvider/Amount'
 export default function App() {
 
   return (
+    <ContextProviderAmount>
 <ContextProvider>  
-<ContextProvidercount>
+<ContextProviderProductCart>
 <BottomNavigation/> 
-</ContextProvidercount>
-
-
+</ContextProviderProductCart>
     </ContextProvider>
- 
-  
-   
+    </ContextProviderAmount>
+
   )
 }
 

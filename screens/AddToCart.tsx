@@ -1,21 +1,21 @@
 import React , {useContext} from "react"
 import { StyleSheet, Text, View , Pressable, Dimensions } from 'react-native';
+import { ProductCartInfo } from "../contextProvider/ProductCart";
 const width=Dimensions.get("window").width
-import { ProductCartInfo } from '../contextProvider/ProductCart';
-import { AmountInfo } from "../contextProvider/Amount";
-export const  Home=()=> {
-const {ProductCart, setProductCart } = useContext(ProductCartInfo)
-const {Amount, setAmount} = useContext(AmountInfo)
-console.log(ProductCart)
+
+export const  AddToCart=({route , navigation})=> {
+    const {ProductCart, setProductCart } = useContext(ProductCartInfo)
+    console.log(ProductCart)
   return (
     <View style={styles.container}>
-<Text>Home</Text>
-
-<Pressable onPress={()=>setProductCart([1])}>
-  <Text>
-    change cart {Amount}
-  </Text>
-</Pressable>
+<Text>AddToCart {ProductCart?.length}</Text>
+    {
+        ProductCart?.map((el , ind)=>{
+            return (
+                <Text>{ind + 1} = {el.id}</Text>
+            )
+        })
+    }
     </View>
   );
 }
