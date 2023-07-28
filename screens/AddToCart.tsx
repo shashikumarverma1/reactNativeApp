@@ -16,6 +16,9 @@ export const  AddToCart=({route , navigation})=> {
             )
         })
     }
+ <Pressable onPress={()=>navigation.navigate("PayNow" , {price:500})}>
+ <Text>pay now </Text>
+ </Pressable>
     </View>
   );
 }

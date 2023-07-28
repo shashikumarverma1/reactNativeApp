@@ -4,7 +4,7 @@ export const ProductCartInfo = createContext(null);
 const ContextProviderProductCart = ({ children }: any) => {
   const [ProductCart, setProductCart] = useState<any>([]);
  
-  console.log(children)
+  // console.log(children)
 
   return (
     <ProductCartInfo.Provider

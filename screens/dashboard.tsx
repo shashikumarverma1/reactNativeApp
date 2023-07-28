@@ -3,9 +3,11 @@ import { StyleSheet, Text, View , Pressable, ScrollView ,  } from 'react-native'
 import React , {useState , useEffect , useContext} from 'react';
 import { Menu } from '../component/menu';
 import { ProductCartInfo } from '../contextProvider/ProductCart';
+import { AmountInfo } from '../contextProvider/Amount';
 export const Dashboard=({navigation})=> {
   const [menu , setMenu] = useState(false)
   const {ProductCart, setProductCart } = useContext(ProductCartInfo)
+  const {Amount, setAmount} = useContext(AmountInfo)
   const [productData , setproductData] = useState([])
 useEffect(()=>{
   GetProductData()
@@ -30,6 +32,12 @@ const GetProductData= async()=>{
        <Pressable onPress={()=>navigation.navigate("AddToCart")}>
         <Text style={{paddingLeft:10 , fontSize:25 }}>cart {ProductCart?.length}</Text>
        </Pressable>
+ </View>
+ <View>
+<Pressable onPress={()=>navigation.navigate('AddMoney')}>
+<Text>Add money </Text>
+</Pressable>
+  <Text>{Amount}</Text>
  </View>
     {
       menu ?   <Menu menu={menu} setMenu={setMenu} /> : null

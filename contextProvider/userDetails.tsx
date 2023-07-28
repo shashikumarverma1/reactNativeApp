@@ -4,7 +4,7 @@ export const GlobalInfo = createContext(null);
 const ContextProvider = ({ children }: any) => {
   const [userDetails, setUserDetails] = useState<any>({name:"ram"});
  
-  console.log(children)
+  // console.log(children)
 
   return (
     <GlobalInfo.Provider
