@@ -14,7 +14,9 @@ export const  PayNow=({route , navigation})=> {
   <Text>upi</Text>
   <Text>paytm</Text>
   <Text>phonepay</Text>
- <Pressable onPress={()=>setAmount(Amount - price)}>
+ <Pressable onPress={()=>{setAmount(Amount - price)
+
+}}>
  <Text>pay : {price} {Amount}</Text>
  </Pressable>
     </View>

@@ -34,5 +34,18 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     paddingLeft:10
     
-  }
+  },
+  Card: {
+    paddingVertical: 5,
+    marginVertical: 5,
+    paddingHorizontal: 5,
+    marginHorizontal: 5,
+    flex: 0.3,
+    borderWidth: 1,
+    borderColor: '#dddddd',
+    borderBottomLeftRadius: 4,
+    borderBottomRightRadius: 4,
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+  },
 });
