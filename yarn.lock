@@ -5825,6 +5825,11 @@ react-native-codegen@^0.71.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-document-scanner-plugin@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-document-scanner-plugin/-/react-native-document-scanner-plugin-0.9.0.tgz#bb5484a36cb59c011bd71a6778d58793ec2976c1"
+  integrity sha512-plONbjVoncCaEPqJL//4sKAzh/E+ScLjahxR02S9jFBh3IG4q+dUzq/juaCWC1rRxAWRTKga2KefUYQ1bIIHxA==
+
 react-native-gesture-handler@^2.12.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.12.0.tgz#59ca9d97e4c71f70b9c258f14a1a081f4c689976"

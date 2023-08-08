@@ -13,6 +13,7 @@ import { ProductDetails } from '../component/ProductDetails';
 import { AddToCart } from '../screens/AddToCart';
 import { PayNow } from '../screens/PayNow';
 import { AddMoney } from '../screens/AddMoney';
+import { DocumentScaner } from '../functionality/documentScanner';
 
 
 const Stack = createStackNavigator();
@@ -35,6 +36,7 @@ export const StackNavigation=() =>{
     <Stack.Screen name="AddToCart" component={AddToCart} />
     <Stack.Screen name="PayNow" component={PayNow} />
     <Stack.Screen name="AddMoney" component={AddMoney} />
+    <Stack.Screen name="DocumentScaner" component={DocumentScaner} />
   </Stack.Navigator>
   );
 }

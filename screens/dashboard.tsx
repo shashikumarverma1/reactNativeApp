@@ -68,12 +68,11 @@ onPress={async() => payment('5000' ,'sk' ,'s@gmail.com' ,'7007414506' )}
 </Pressable>
 <Pressable 
 onPress={() =>
-  //  mail()
-  console.log('cli')
+navigation.navigate('DocumentScaner')
 
 }
 >
-  <Text>send mail</Text>
+  <Text>scan</Text>
 </Pressable>
 
     </ScrollView>
