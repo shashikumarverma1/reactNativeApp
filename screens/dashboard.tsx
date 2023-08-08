@@ -4,6 +4,10 @@ import React , {useState , useEffect , useContext} from 'react';
 import { Menu } from '../component/menu';
 import { ProductCartInfo } from '../contextProvider/ProductCart';
 import { AmountInfo } from '../contextProvider/Amount';
+import RazorpayCheckout from 'react-native-razorpay';
+import { payment } from '../functionality/payment';
+
+
 export const Dashboard=({navigation})=> {
   const [menu , setMenu] = useState(false)
   const {ProductCart, setProductCart } = useContext(ProductCartInfo)
@@ -47,7 +51,7 @@ const GetProductData= async()=>{
   productData.map((el ,i)=>{
     // console.log(el ,i)
     return (
-   <View>
+   <View key={i}>
       <Pressable onPress={()=>navigation.navigate('ProductDetails' , {el})}>
        <Text style={{textAlign:'center'}}>{i}</Text>
        {/* <Text style={{marginLeft:10}}>Add to cart</Text> */}
@@ -57,6 +61,21 @@ const GetProductData= async()=>{
     )
   })
 }
+<Pressable 
+onPress={async() => payment('5000' ,'sk' ,'s@gmail.com' ,'7007414506' )}
+>
+  <Text>pay now</Text>
+</Pressable>
+<Pressable 
+onPress={() =>
+  //  mail()
+  console.log('cli')
+
+}
+>
+  <Text>send mail</Text>
+</Pressable>
+
     </ScrollView>
  
 
