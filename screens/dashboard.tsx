@@ -6,7 +6,7 @@ import { ProductCartInfo } from '../contextProvider/ProductCart';
 import { AmountInfo } from '../contextProvider/Amount';
 import RazorpayCheckout from 'react-native-razorpay';
 import { payment } from '../functionality/payment';
-
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export const Dashboard=({navigation})=> {
   const [menu , setMenu] = useState(false)
@@ -26,22 +26,27 @@ const GetProductData= async()=>{
 // console.log(productData)
   return (
     <View style={styles.container}>
- <View style={[styles.Flex , {justifyContent:'space-between'}]}>
+ <View style={[styles.Flex , {justifyContent:'space-between' , paddingTop:20}]}>
        <Pressable onPress={()=>setMenu(true)}>
-        <Text style={{paddingLeft:10 , fontSize:25 }}>menu</Text>
+        <Text style={{paddingLeft:10 , fontSize:25 }}><Ionicons name="menu-outline" size={25} color="" /></Text>
+        
        </Pressable>
        <Pressable>
        <Text style={{color :'red' ,fontWeight:'bold' , fontSize:25 }}>Dasshboard</Text>
        </Pressable>
        <Pressable onPress={()=>navigation.navigate("AddToCart")}>
-        <Text style={{paddingLeft:10 , fontSize:25 }}>cart {ProductCart?.length}</Text>
+        <Text style={{paddingLeft:10 , fontSize:25 ,paddingRight:20}}><Ionicons name="cart-outline" size={25} color="" /><Text style={{color:'red'}}>{ProductCart?.length}</Text></Text>
        </Pressable>
+      
  </View>
- <View>
+ <View style={{width:100 , height:100 , backgroundColor:'aqua' , display:'flex' , justifyContent:'center' , flexDirection:'row' , alignItems:'center' , borderRadius:20, marginLeft:'auto'}}>
+<View>
 <Pressable onPress={()=>navigation.navigate('AddMoney')}>
-<Text>Add money </Text>
+<Text><Ionicons name="add-outline" size={20} color="" /><Text style={{ textAlign:'center', fontSize:20}}>Add</Text></Text>
 </Pressable>
-  <Text>{Amount}</Text>
+  <Text>{Amount}₹</Text>
+  <Text>in your wallet</Text>
+</View>
  </View>
     {
       menu ?   <Menu menu={menu} setMenu={setMenu} /> : null
@@ -76,7 +81,8 @@ navigation.navigate('DocumentScaner')
 </Pressable>
 
     </ScrollView>
- 
+ <Text>  <Ionicons name="menu-outline" size={25} color="" /></Text>
+ {/* <ion-icon name="menu-outline"></ion-icon> */}
 
      </View>
   )
