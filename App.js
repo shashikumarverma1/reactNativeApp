@@ -6,12 +6,13 @@ import { BottomNavigation } from './navigations/Bottomnavigation';
 import ContextProviderProductCart from './contextProvider/ProductCart'
 import ContextProviderAmount from './contextProvider/Amount'
 import Orders from './contextProvider/Orders';
+import Apolo from './contextProvider/Apolo';
 export default function App() {
 
   return (
     <Orders>
 
-   
+   <Apolo>
     <ContextProviderAmount>
 <ContextProvider>  
 <ContextProviderProductCart>
@@ -19,6 +20,7 @@ export default function App() {
 </ContextProviderProductCart>
     </ContextProvider>
     </ContextProviderAmount>
+    </Apolo>
     </Orders>
   )
 }

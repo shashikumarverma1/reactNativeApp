@@ -7,12 +7,18 @@ import { AmountInfo } from '../contextProvider/Amount';
 import RazorpayCheckout from 'react-native-razorpay';
 import { payment } from '../functionality/payment';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useQuery } from '@apollo/client';
+import { USER } from '../utils/gql';
 
 export const Dashboard=({navigation})=> {
   const [menu , setMenu] = useState(false)
   const {ProductCart, setProductCart } = useContext(ProductCartInfo)
   const {Amount, setAmount} = useContext(AmountInfo)
   const [productData , setproductData] = useState([])
+
+  const {data} =useQuery(USER)
+  console.log(data , "user")
+
 useEffect(()=>{
   GetProductData()
 } ,[])
